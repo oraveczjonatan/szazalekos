@@ -22,14 +22,14 @@ export default class Content {
         const params = new url.URL(req.url as string, `http://${req.headers.host}/`).searchParams;
 
         res.write("Egyszerű Százalékszámítás\n");
-        res.write("<span style='color: blue;'><i>+-10%'</i></span>\n");
+        res.write("<span style='color: blue;'><i>+-5%'</i></span>\n");
         let szamod = parseInt(params.get("szam") as string);
 
         if (isNaN(szamod)) szamod = 0;
 
         res.write(`Kérem a Számot: <input type='number' name='szam' value=${szamod} style='max-width:100px;' onChange='this.form.submit();'>\n`);
-        res.write(`-10%-a ${(szamod / 100) * 90} \n`);
-        res.write(`+10%-a ${(szamod / 100) * 110} \n`);
+        res.write(`-5%-a ${(szamod / 100) * 95} \n`);
+        res.write(`+5%-a ${(szamod / 100) * 105} \n`);
 
         res.write("</pre></form>");
         res.write("</body></html>");
